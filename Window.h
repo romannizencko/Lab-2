@@ -10,23 +10,23 @@ private:
     string color;
 public:
     Window();
-    Window(string owner, string title, string color);
+    Window( const string owner, const string title, const string color);
     Window(const Window &window);
-    void print();
-    void setOwner(string owner);
-    void setTitle(string title);
-    void setColor(string color);
-    string getOwner();
-    string getTitle();
-    string getColor();
+    void print() const;
+    void setOwner(const string owner);
+    void setTitle(const string title);
+    void setColor(const string color);
+    string getOwner() const;
+    string getTitle() const;
+    string getColor() const;
 
     Window& operator = (const Window &otherWindow);
-    bool operator == (const Window &otherWindow);
-    bool operator != (const Window &otherWindow);
-    bool operator > (const Window &otherWindow);
-    bool operator < (const Window &otherWindow);
-    bool operator <= (const Window &otherWindow);
-    bool operator >= (const Window &otherWindow);
+    bool operator == (const Window &otherWindow) const;
+    bool operator != (const Window &otherWindow) const;
+    bool operator > (const Window &otherWindow) const;
+    bool operator < (const Window &otherWindow) const;
+    bool operator <= (const Window &otherWindow) const;
+    bool operator >= (const Window &otherWindow) const;
     friend ostream& operator << (ostream &out, const Window &window);
     friend istream& operator >> (istream &in, Window &window);
 };

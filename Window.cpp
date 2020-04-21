@@ -3,7 +3,7 @@
 
 using namespace std;
     Window :: Window(){}
-    Window :: Window(string owner, string title, string color)
+    Window :: Window(const string owner, const string title, const string color)
     {
         this -> owner = owner;
         this -> title = title;
@@ -16,28 +16,28 @@ using namespace std;
         this -> title = window.title;
         this -> color = window.color;
     }
-    void Window :: print()
+    void Window :: print() const
     {   cout << "Owner: " << owner << "\tTitle: \t" << title << "\tColor: " << color << endl;    }
 
-    void Window :: setOwner(string owner)
+    void Window :: setOwner(const string owner)
     {   this -> owner = owner;  }
 
-    void Window :: setTitle(string title)
+    void Window :: setTitle(const string title)
     {   this -> title = title;  }
 
-    void Window :: setColor(string color)
+    void Window :: setColor(const string color)
     {   this -> color = color;  }
 
-    string Window :: getOwner()
+    string Window :: getOwner() const
     {
         return owner;
     }
-    string Window :: getTitle()
+    string Window :: getTitle() const
     {
         return title;
     }
 
-    string Window :: getColor()
+    string Window :: getColor() const
     {
         return color;
     }
@@ -52,17 +52,17 @@ using namespace std;
         return *this;
     }
 
-    bool Window :: operator == (const Window &otherWindow)
+    bool Window :: operator == (const Window &otherWindow) const
     {
         return ((this->owner == otherWindow.owner) && (this->title == otherWindow.title) && (this->color == otherWindow.color));
     }
 
-    bool Window :: operator != (const Window &otherWindow)
+    bool Window :: operator != (const Window &otherWindow) const
     {
         return ((this->owner != otherWindow.owner) || (this->title != otherWindow.title) || (this->color != otherWindow.color));
     }
 
-    bool Window :: operator > (const Window &otherWindow)
+    bool Window :: operator > (const Window &otherWindow) const
     {
         if (this->owner > otherWindow.owner)
             return true;
@@ -79,7 +79,7 @@ using namespace std;
         return false;
     }
 
-    bool Window :: operator < (const Window &otherWindow)
+    bool Window :: operator < (const Window &otherWindow) const
     {
         if (this->owner < otherWindow.owner)
             return true;
@@ -96,7 +96,7 @@ using namespace std;
         return false;
     }
 
-    bool Window :: operator >= (const Window &otherWindow)
+    bool Window :: operator >= (const Window &otherWindow) const
     {
         if (this->owner > otherWindow.owner)
             return true;
@@ -113,7 +113,7 @@ using namespace std;
         return true;
     }
 
-    bool Window :: operator <= (const Window &otherWindow)
+    bool Window :: operator <= (const Window &otherWindow) const
     {
         if (this->owner < otherWindow.owner)
             return true;
